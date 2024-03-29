@@ -30,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7832398387831198112}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.000024816021, y: 0.00000010523945, z: 0.0018715495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7832398387831198113
 MonoBehaviour:
@@ -52,11 +52,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopWatch: {fileID: 1688263377763703893}
   stopWatchGui: {fileID: -4745815946667895209}
-  showMenu: 1
+  state: 1
   local: 1
   cameraObject: {fileID: 0}
   guiButtonSprite: {fileID: 2800000, guid: 5d6207b056d2943a288a8b169d6b25ac, type: 3}
   guiButtonActiveSprite: {fileID: 2800000, guid: 1dfbf2a8a7f0949bfb6f1edbee20c596,
+    type: 3}
+  guiScrollBarSprite: {fileID: 2800000, guid: cdf0bd4c2a4b8488c9320b35fba496bc, type: 3}
+  guiScrollBarThumbSprite: {fileID: 2800000, guid: 94cf09ed28c19436ba30e5e9abe9ca7f,
     type: 3}
 --- !u!114 &7832398387831198115
 MonoBehaviour:

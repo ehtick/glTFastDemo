@@ -128,8 +128,15 @@ public class TestGui : MonoBehaviour {
     [SerializeField]
     Texture2D guiButtonActiveSprite;
 
+    [SerializeField]
+    Texture2D guiScrollBarSprite;
+
+    [SerializeField]
+    Texture2D guiScrollBarThumbSprite;
+
 #if UNITY_IMGUI
     bool enableLocalSwitch = true;
+    bool enableUrlField = true;
 
     SampleSet sampleSet = null;
 
@@ -151,7 +158,7 @@ public class TestGui : MonoBehaviour {
     GUIStyle buttonStyle;
     GUIStyle toggleStyle;
     GUIStyle textFieldStyle;
-    
+   
     int? currentSceneIndex => testLoader.currentSceneIndex;
 
     void Awake() {
@@ -175,6 +182,7 @@ public class TestGui : MonoBehaviour {
 #if UNITY_ANDROID
         local = false;
         enableLocalSwitch = false;
+        enableUrlField = false;
 #endif
     }
 
@@ -227,40 +235,51 @@ public class TestGui : MonoBehaviour {
     TestLoader loader;
     private void OnGUI()
     {
-        float width = Screen.width;
-        float height = Screen.height;
+        float width = Screen.safeArea.width;
+        float height = Screen.safeArea.height;
 
         if (labelStyle == null) {
             labelStyle = GUI.skin.label;
             buttonStyle = GUI.skin.button;
             toggleStyle = GUI.skin.toggle;
             textFieldStyle = GUI.skin.textField;
-                
-            labelStyle.normal.textColor =
-                labelStyle.hover.textColor =
-                    buttonStyle.normal.textColor =
-                        buttonStyle.active.textColor =
-                            buttonStyle.hover.textColor =
-                                textFieldStyle.normal.textColor =
-                                    textFieldStyle.active.textColor =
-                                        textFieldStyle.hover.textColor = 
-                                            toggleStyle.normal.textColor =
-                                                toggleStyle.active.textColor =
-                                                    toggleStyle.hover.textColor = Color.black;
+
+            var textColor = Color.black;
+
+            labelStyle.normal.textColor = textColor;
+            labelStyle.hover.textColor = textColor;
+            buttonStyle.normal.textColor = textColor;
+            buttonStyle.active.textColor = textColor;
+            buttonStyle.hover.textColor = textColor;
+            textFieldStyle.normal.textColor = textColor;
+            textFieldStyle.active.textColor = textColor;
+            textFieldStyle.hover.textColor =  textColor;
+            toggleStyle.normal.textColor = textColor;
+            toggleStyle.active.textColor = textColor;
+            toggleStyle.hover.textColor = textColor;
                 
             buttonStyle.clipping = TextClipping.Clip;
             buttonStyle.wordWrap = false;
+
+            var vScrollBarThumbStyle  = GUI.skin.verticalScrollbarThumb;
+            var vScrollBarStyle  = GUI.skin.verticalScrollbar;
 
             if (guiButtonSprite != null) {
                 buttonStyle.normal.background = guiButtonSprite;
             }
             if (guiButtonActiveSprite != null) {
-                buttonStyle.active.background =
-                    buttonStyle.focused.background =
-                        buttonStyle.hover.background = guiButtonActiveSprite;
+                buttonStyle.active.background = guiButtonActiveSprite;
+                buttonStyle.focused.background = guiButtonActiveSprite;
+                buttonStyle.hover.background = guiButtonActiveSprite;
+            }
+            if(guiScrollBarSprite != null) {
+                vScrollBarStyle.normal.background = guiScrollBarSprite;
+            }
+            if(guiScrollBarThumbSprite != null) {
+                vScrollBarThumbStyle.normal.background = guiScrollBarThumbSprite;
             }
         }
-        
+
 #if UNITY_GLTF
         // for switching between glTFast and UnityGltf in the same instance
         if (!loader) loader = GetComponent<TestLoader>();
@@ -270,8 +289,10 @@ public class TestGui : MonoBehaviour {
         }
 #endif
 
+        var y = Screen.safeArea.y;
+        
         if(state==MenuState.ShowButton) {
-            var topLeft = new Rect(0, 0, 130, 20);
+            var topLeft = new Rect(0, y, GlobalGui.buttonWidth, GlobalGui.barHeightWidth);
             if (GUI.Button(topLeft, "...")) {
                 state = MenuState.Visible;
             }
@@ -279,31 +300,31 @@ public class TestGui : MonoBehaviour {
         else
         if(state==MenuState.Visible && sampleSet!=null) {
 
-            var y = 0f;
-            
-            GUI.BeginGroup( new Rect(0,0,width,GlobalGui.barHeightWidth) );
-            
-            float urlFieldWidth = width-GlobalGui.buttonWidth;
+            if(enableUrlField) {
+                GUI.BeginGroup( new Rect(0,y,width,GlobalGui.barHeightWidth) );
+                
+                float urlFieldWidth = width-GlobalGui.buttonWidth;
 
 #if UNITY_EDITOR
-            if(GUI.Button( new Rect(width-GlobalGui.buttonWidth*2,0,GlobalGui.buttonWidth,GlobalGui.barHeightWidth),"Open")) {
-                string path = EditorUtility.OpenFilePanel("Select glTF", "", "glb");
-                if (path.Length != 0)
-                {
-                    LoadUrlAsync("file://"+path);
+                if(GUI.Button( new Rect(width-GlobalGui.buttonWidth*2,0,GlobalGui.buttonWidth,GlobalGui.barHeightWidth),"Open")) {
+                    string path = EditorUtility.OpenFilePanel("Select glTF", "", "glb");
+                    if (path.Length != 0)
+                    {
+                        LoadUrlAsync("file://"+path);
+                    }
                 }
-            }
-            urlFieldWidth -= GlobalGui.buttonWidth;
+                urlFieldWidth -= GlobalGui.buttonWidth;
 #endif
 
-            urlField = GUI.TextField( new Rect(130,0,urlFieldWidth,GlobalGui.barHeightWidth),urlField);
-            if(GUI.Button( new Rect(width-GlobalGui.buttonWidth,0,GlobalGui.buttonWidth,GlobalGui.barHeightWidth),"Load")) {
-                LoadUrlAsync(urlField);
+                urlField = GUI.TextField( new Rect(0,0,urlFieldWidth,GlobalGui.barHeightWidth),urlField);
+                if(GUI.Button( new Rect(width-GlobalGui.buttonWidth,0,GlobalGui.buttonWidth,GlobalGui.barHeightWidth),"Load")) {
+                    LoadUrlAsync(urlField);
+                }
+                GUI.EndGroup();
+                y += GlobalGui.barHeightWidth;
             }
-            GUI.EndGroup();
-            y += GlobalGui.barHeightWidth;
 
-            float listItemWidth = GlobalGui.listWidth-16;
+            float listItemWidth = GlobalGui.listWidth-GlobalGui.barHeightWidth-1; // avoid horizontal scrollbar
             if(enableLocalSwitch) {
                 local = GUI.Toggle(new Rect(GlobalGui.listWidth,GlobalGui.barHeightWidth,GlobalGui.listWidth*2,GlobalGui.barHeightWidth),local,local?"local":"http");
             }
@@ -340,7 +361,7 @@ public class TestGui : MonoBehaviour {
             } else {
                 var items = local ? testItemsLocal : testItems;
                 scrollPos = GUI.BeginScrollView(
-                    new Rect(0,GlobalGui.barHeightWidth,GlobalGui.listWidth,height-GlobalGui.barHeightWidth),
+                    new Rect(0,y,GlobalGui.listWidth,height-y),
                     scrollPos,
                     new Rect(0,0,listItemWidth, GlobalGui.listItemHeight*items.Count)
                 );

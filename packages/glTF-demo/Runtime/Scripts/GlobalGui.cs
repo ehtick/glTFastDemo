@@ -31,19 +31,38 @@ public static class GlobalGui
 
         screenFactor = Mathf.Max( 1, Mathf.Floor( Screen.dpi / 100f ));
 
+        var fontSize =  Mathf.RoundToInt(14 * screenFactor);
+
         var guiStyle = GUI.skin.button;
-        guiStyle.fontSize = Mathf.RoundToInt(14 * screenFactor);
+        guiStyle.fontSize = fontSize;
 
         guiStyle = GUI.skin.toggle;
-        guiStyle.fontSize = Mathf.RoundToInt(14 * screenFactor);
+        guiStyle.fontSize = fontSize;
 
         guiStyle = GUI.skin.label;
-        guiStyle.fontSize = Mathf.RoundToInt(14 * screenFactor);
+        guiStyle.fontSize = fontSize;
+
+        guiStyle = GUI.skin.textField;
+        guiStyle.fontSize = fontSize;
 
         barHeightWidth *= screenFactor;
         buttonWidth *= screenFactor;
         listWidth *= screenFactor;
         listItemHeight *= screenFactor;
+
+        guiStyle = GUI.skin.verticalScrollbar;
+        guiStyle.fixedWidth = barHeightWidth;
+
+        guiStyle = GUI.skin.verticalScrollbarThumb;
+        guiStyle.fixedWidth = barHeightWidth;
+
+        guiStyle = GUI.skin.verticalScrollbarUpButton;
+        guiStyle.fixedWidth = barHeightWidth;
+        guiStyle.fixedHeight = 0;
+
+        guiStyle = GUI.skin.verticalScrollbarDownButton;
+        guiStyle.fixedWidth = barHeightWidth;
+        guiStyle.fixedHeight = 0;
 
         initialized = true;
     }
