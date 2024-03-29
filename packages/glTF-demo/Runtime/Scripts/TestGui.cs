@@ -120,6 +120,8 @@ public class TestGui : MonoBehaviour {
     Texture2D guiButtonActiveSprite;
 
 #if UNITY_IMGUI
+    bool enableLocalSwitch = true;
+
     SampleSet sampleSet = null;
 
     List<Tuple<string,string>> testItems = new List<Tuple<string, string>>();
@@ -158,6 +160,13 @@ public class TestGui : MonoBehaviour {
         testLoader.urlChanged += UrlChanged;
         testLoader.loadingBegin += OnLoadingBegin;
         testLoader.loadingEnd += OnLoadingEnd;
+    }
+
+    void Start() {
+#if UNITY_ANDROID
+        local = false;
+        enableLocalSwitch = false;
+#endif
     }
 
     void OnLoadingBegin(string title) {
@@ -279,7 +288,9 @@ public class TestGui : MonoBehaviour {
             y += GlobalGui.barHeightWidth;
 
             float listItemWidth = GlobalGui.listWidth-16;
-            local = GUI.Toggle(new Rect(GlobalGui.listWidth,GlobalGui.barHeightWidth,GlobalGui.listWidth*2,GlobalGui.barHeightWidth),local,local?"local":"http");
+            if(enableLocalSwitch) {
+                local = GUI.Toggle(new Rect(GlobalGui.listWidth,GlobalGui.barHeightWidth,GlobalGui.listWidth*2,GlobalGui.barHeightWidth),local,local?"local":"http");
+            }
             
             if (sceneDropDown != null || cameraDropDown != null) {
                 
