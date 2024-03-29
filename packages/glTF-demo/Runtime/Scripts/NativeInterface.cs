@@ -17,7 +17,11 @@ public class NativeInterface : MonoBehaviour {
         m_TestLoader.loadingEnd -= OnModelLoaded;
     }
 
+#if UNITY_WEBGL
     [DllImport("__Internal")]
     static extern void OnModelLoaded(bool success);
+#else
+    static void OnModelLoaded(bool success) {}
+#endif
 #endif
 }
