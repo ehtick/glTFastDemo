@@ -26,6 +26,7 @@ using GLTFTest.Sample;
 
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine.Serialization;
 #endif
 
 [RequireComponent(typeof(TestLoader))]
@@ -98,6 +99,13 @@ public class TestGui : MonoBehaviour {
     }
 #endif
 
+    enum MenuState {
+        Hidden,
+        Visible,
+        ShowButton,
+
+    }
+
 #pragma warning disable 0414
     [SerializeField]
     StopWatch stopWatch = null;
@@ -106,7 +114,8 @@ public class TestGui : MonoBehaviour {
     StopWatchGui stopWatchGui = null;
 #pragma warning restore 0414
 
-    public bool showMenu = true;
+    [SerializeField]
+    MenuState state = MenuState.Visible;
     // Load files locally (from streaming assets) or via HTTP
     public bool local = false;
 
@@ -151,7 +160,7 @@ public class TestGui : MonoBehaviour {
 
 #if PLATFORM_WEBGL && !UNITY_EDITOR
         // Hide UI in glTF compare web
-        showMenu = false;
+        state = MenuState.Hidden;
 #endif
 
         var selectSet = GetComponent<SampleSetSelectGui>();
@@ -175,7 +184,7 @@ public class TestGui : MonoBehaviour {
     }
 
     void OnLoadingEnd(bool success) {
-        showMenu = true;
+        state = MenuState.ShowButton;
         stopWatch.StopTime();
     }
 
@@ -261,7 +270,14 @@ public class TestGui : MonoBehaviour {
         }
 #endif
 
-        if(showMenu && sampleSet!=null) {
+        if(state==MenuState.ShowButton) {
+            var topLeft = new Rect(0, 0, 130, 20);
+            if (GUI.Button(topLeft, "...")) {
+                state = MenuState.Visible;
+            }
+        }
+        else
+        if(state==MenuState.Visible && sampleSet!=null) {
 
             var y = 0f;
             
@@ -343,7 +359,7 @@ public class TestGui : MonoBehaviour {
         foreach( var item in items ) {
             if(GUI.Button(new Rect(0,y,listItemWidth,GlobalGui.listItemHeight),item.Item1)) {
                 // Hide menu during loading, since it can distort the performance profiling.
-                showMenu = false;
+                state = MenuState.Hidden;
                 LoadUrlAsync(item.Item2);
             }
             y+=GlobalGui.listItemHeight;

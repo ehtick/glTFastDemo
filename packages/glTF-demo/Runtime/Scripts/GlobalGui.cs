@@ -19,7 +19,7 @@ using UnityEngine;
 public static class GlobalGui
 {
     public static float screenFactor;
-    public static float listWidth = 150;
+    public static float listWidth = 200;
     public static float barHeightWidth = 25;
     public static float listItemHeight = 25;
     public static float buttonWidth = 50;
