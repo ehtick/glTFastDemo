@@ -41,16 +41,15 @@ public class SampleSetSelectGui : MonoBehaviour
     private void OnGUI()
     {
         GlobalGui.Init();
-        float width = Screen.width;
-        float height = Screen.height;
+        float width = Screen.safeArea.width;
+        float height = Screen.safeArea.height;
 
         float listItemWidth = GlobalGui.listWidth-16;
         scrollPos = GUI.BeginScrollView(
-            new Rect(0,GlobalGui.barHeightWidth,GlobalGui.listWidth,height-GlobalGui.barHeightWidth),
+            new Rect(0,Screen.safeArea.y,GlobalGui.listWidth,height-GlobalGui.barHeightWidth),
             scrollPos,
             new Rect(0,0,listItemWidth, GlobalGui.listItemHeight*sampleSetCollection.sampleSets.Length)
         );
-
 
         float y = 0;
         foreach( var set in sampleSetCollection.sampleSets ) {
