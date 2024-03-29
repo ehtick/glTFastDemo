@@ -1,0 +1,356 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2bdf3fe6678e40fea6df4342d07093a, type: 3}
+  m_Name: glTF-Sample-Assets-glb
+  m_EditorClassIdentifier: 
+  baseLocalPath: /Users/aa/sdk/glTF-Sample-Assets/Models
+  assetRelativePath: 
+  streamingAssetsPath: gsa
+  baseUrlWeb: https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/
+  baseUrlLocal: http://localhost:8080/glTF-Sample-Assets/Models
+  items:
+  - active: 1
+    item:
+      name: AlphaBlendModeTest.glb
+      path: AlphaBlendModeTest/glTF-Binary/AlphaBlendModeTest.glb
+  - active: 1
+    item:
+      name: AnimatedMorphCube.glb
+      path: AnimatedMorphCube/glTF-Binary/AnimatedMorphCube.glb
+  - active: 1
+    item:
+      name: AnisotropyBarnLamp.glb
+      path: AnisotropyBarnLamp/glTF-Binary/AnisotropyBarnLamp.glb
+  - active: 1
+    item:
+      name: AnisotropyDiscTest.glb
+      path: AnisotropyDiscTest/glTF-Binary/AnisotropyDiscTest.glb
+  - active: 1
+    item:
+      name: AnisotropyRotationTest.glb
+      path: AnisotropyRotationTest/glTF-Binary/AnisotropyRotationTest.glb
+  - active: 1
+    item:
+      name: AnisotropyStrengthTest.glb
+      path: AnisotropyStrengthTest/glTF-Binary/AnisotropyStrengthTest.glb
+  - active: 1
+    item:
+      name: AntiqueCamera.glb
+      path: AntiqueCamera/glTF-Binary/AntiqueCamera.glb
+  - active: 1
+    item:
+      name: AttenuationTest.glb
+      path: AttenuationTest/glTF-Binary/AttenuationTest.glb
+  - active: 1
+    item:
+      name: Avocado.glb
+      path: Avocado/glTF-Binary/Avocado.glb
+  - active: 1
+    item:
+      name: BarramundiFish.glb
+      path: BarramundiFish/glTF-Binary/BarramundiFish.glb
+  - active: 1
+    item:
+      name: BoomBox.glb
+      path: BoomBox/glTF-Binary/BoomBox.glb
+  - active: 1
+    item:
+      name: Box.glb
+      path: Box/glTF-Binary/Box.glb
+  - active: 1
+    item:
+      name: BoxAnimated.glb
+      path: BoxAnimated/glTF-Binary/BoxAnimated.glb
+  - active: 1
+    item:
+      name: BoxInterleaved.glb
+      path: BoxInterleaved/glTF-Binary/BoxInterleaved.glb
+  - active: 1
+    item:
+      name: BoxTextured.glb
+      path: BoxTextured/glTF-Binary/BoxTextured.glb
+  - active: 1
+    item:
+      name: BoxTexturedNonPowerOfTwo.glb
+      path: BoxTexturedNonPowerOfTwo/glTF-Binary/BoxTexturedNonPowerOfTwo.glb
+  - active: 1
+    item:
+      name: BoxVertexColors.glb
+      path: BoxVertexColors/glTF-Binary/BoxVertexColors.glb
+  - active: 1
+    item:
+      name: BrainStem.glb
+      path: BrainStem/glTF-Binary/BrainStem.glb
+  - active: 1
+    item:
+      name: CarbonFibre.glb
+      path: CarbonFibre/glTF-Binary/CarbonFibre.glb
+  - active: 1
+    item:
+      name: CesiumMan.glb
+      path: CesiumMan/glTF-Binary/CesiumMan.glb
+  - active: 1
+    item:
+      name: CesiumMilkTruck.glb
+      path: CesiumMilkTruck/glTF-Binary/CesiumMilkTruck.glb
+  - active: 1
+    item:
+      name: ChairDamaskPurplegold.glb
+      path: ChairDamaskPurplegold/glTF-Binary/ChairDamaskPurplegold.glb
+  - active: 1
+    item:
+      name: ClearCoatCarPaint.glb
+      path: ClearCoatCarPaint/glTF-Binary/ClearCoatCarPaint.glb
+  - active: 1
+    item:
+      name: ClearCoatTest.glb
+      path: ClearCoatTest/glTF-Binary/ClearCoatTest.glb
+  - active: 1
+    item:
+      name: ClearcoatWicker.glb
+      path: ClearcoatWicker/glTF-Binary/ClearcoatWicker.glb
+  - active: 1
+    item:
+      name: Corset.glb
+      path: Corset/glTF-Binary/Corset.glb
+  - active: 1
+    item:
+      name: DamagedHelmet.glb
+      path: DamagedHelmet/glTF-Binary/DamagedHelmet.glb
+  - active: 1
+    item:
+      name: DiffuseTransmissionPlant.glb
+      path: DiffuseTransmissionPlant/glTF-Binary/DiffuseTransmissionPlant.glb
+  - active: 1
+    item:
+      name: DiffuseTransmissionTeacup.glb
+      path: DiffuseTransmissionTeacup/glTF-Binary/DiffuseTransmissionTeacup.glb
+  - active: 1
+    item:
+      name: DirectionalLight.glb
+      path: DirectionalLight/glTF-Binary/DirectionalLight.glb
+  - active: 1
+    item:
+      name: DispersionTest.glb
+      path: DispersionTest/glTF-Binary/DispersionTest.glb
+  - active: 1
+    item:
+      name: DragonAttenuation.glb
+      path: DragonAttenuation/glTF-Binary/DragonAttenuation.glb
+  - active: 1
+    item:
+      name: DragonDispersion.glb
+      path: DragonDispersion/glTF-Binary/DragonDispersion.glb
+  - active: 1
+    item:
+      name: Duck.glb
+      path: Duck/glTF-Binary/Duck.glb
+  - active: 1
+    item:
+      name: EmissiveStrengthTest.glb
+      path: EmissiveStrengthTest/glTF-Binary/EmissiveStrengthTest.glb
+  - active: 1
+    item:
+      name: Fox.glb
+      path: Fox/glTF-Binary/Fox.glb
+  - active: 1
+    item:
+      name: GlamVelvetSofa.glb
+      path: GlamVelvetSofa/glTF-Binary/GlamVelvetSofa.glb
+  - active: 1
+    item:
+      name: GlassBrokenWindow.glb
+      path: GlassBrokenWindow/glTF-Binary/GlassBrokenWindow.glb
+  - active: 1
+    item:
+      name: GlassHurricaneCandleHolder.glb
+      path: GlassHurricaneCandleHolder/glTF-Binary/GlassHurricaneCandleHolder.glb
+  - active: 1
+    item:
+      name: GlassVaseFlowers.glb
+      path: GlassVaseFlowers/glTF-Binary/GlassVaseFlowers.glb
+  - active: 1
+    item:
+      name: IORTestGrid.glb
+      path: IORTestGrid/glTF-Binary/IORTestGrid.glb
+  - active: 1
+    item:
+      name: InterpolationTest.glb
+      path: InterpolationTest/glTF-Binary/InterpolationTest.glb
+  - active: 1
+    item:
+      name: IridescenceAbalone.glb
+      path: IridescenceAbalone/glTF-Binary/IridescenceAbalone.glb
+  - active: 1
+    item:
+      name: IridescenceLamp.glb
+      path: IridescenceLamp/glTF-Binary/IridescenceLamp.glb
+  - active: 1
+    item:
+      name: IridescenceSuzanne.glb
+      path: IridescenceSuzanne/glTF-Binary/IridescenceSuzanne.glb
+  - active: 1
+    item:
+      name: IridescentDishWithOlives.glb
+      path: IridescentDishWithOlives/glTF-Binary/IridescentDishWithOlives.glb
+  - active: 1
+    item:
+      name: Lantern.glb
+      path: Lantern/glTF-Binary/Lantern.glb
+  - active: 1
+    item:
+      name: LightsPunctualLamp.glb
+      path: LightsPunctualLamp/glTF-Binary/LightsPunctualLamp.glb
+  - active: 1
+    item:
+      name: MaterialsVariantsShoe.glb
+      path: MaterialsVariantsShoe/glTF-Binary/MaterialsVariantsShoe.glb
+  - active: 1
+    item:
+      name: MetalRoughSpheres.glb
+      path: MetalRoughSpheres/glTF-Binary/MetalRoughSpheres.glb
+  - active: 1
+    item:
+      name: MetalRoughSpheresNoTextures.glb
+      path: MetalRoughSpheresNoTextures/glTF-Binary/MetalRoughSpheresNoTextures.glb
+  - active: 1
+    item:
+      name: MorphPrimitivesTest.glb
+      path: MorphPrimitivesTest/glTF-Binary/MorphPrimitivesTest.glb
+  - active: 1
+    item:
+      name: MorphStressTest.glb
+      path: MorphStressTest/glTF-Binary/MorphStressTest.glb
+  - active: 1
+    item:
+      name: MosquitoInAmber.glb
+      path: MosquitoInAmber/glTF-Binary/MosquitoInAmber.glb
+  - active: 1
+    item:
+      name: MultiUVTest.glb
+      path: MultiUVTest/glTF-Binary/MultiUVTest.glb
+  - active: 1
+    item:
+      name: NegativeScaleTest.glb
+      path: NegativeScaleTest/glTF-Binary/NegativeScaleTest.glb
+  - active: 1
+    item:
+      name: NormalTangentMirrorTest.glb
+      path: NormalTangentMirrorTest/glTF-Binary/NormalTangentMirrorTest.glb
+  - active: 1
+    item:
+      name: NormalTangentTest.glb
+      path: NormalTangentTest/glTF-Binary/NormalTangentTest.glb
+  - active: 1
+    item:
+      name: OrientationTest.glb
+      path: OrientationTest/glTF-Binary/OrientationTest.glb
+  - active: 1
+    item:
+      name: PotOfCoals.glb
+      path: PotOfCoals/glTF-Binary/PotOfCoals.glb
+  - active: 1
+    item:
+      name: RecursiveSkeletons.glb
+      path: RecursiveSkeletons/glTF-Binary/RecursiveSkeletons.glb
+  - active: 1
+    item:
+      name: RiggedFigure.glb
+      path: RiggedFigure/glTF-Binary/RiggedFigure.glb
+  - active: 1
+    item:
+      name: RiggedSimple.glb
+      path: RiggedSimple/glTF-Binary/RiggedSimple.glb
+  - active: 1
+    item:
+      name: SheenChair.glb
+      path: SheenChair/glTF-Binary/SheenChair.glb
+  - active: 1
+    item:
+      name: SheenTestGrid.glb
+      path: SheenTestGrid/glTF-Binary/SheenTestGrid.glb
+  - active: 1
+    item:
+      name: SimpleInstancing.glb
+      path: SimpleInstancing/glTF-Binary/SimpleInstancing.glb
+  - active: 1
+    item:
+      name: SpecGlossVsMetalRough.glb
+      path: SpecGlossVsMetalRough/glTF-Binary/SpecGlossVsMetalRough.glb
+  - active: 1
+    item:
+      name: SpecularSilkPouf.glb
+      path: SpecularSilkPouf/glTF-Binary/SpecularSilkPouf.glb
+  - active: 1
+    item:
+      name: SpecularTest.glb
+      path: SpecularTest/glTF-Binary/SpecularTest.glb
+  - active: 1
+    item:
+      name: TextureCoordinateTest.glb
+      path: TextureCoordinateTest/glTF-Binary/TextureCoordinateTest.glb
+  - active: 1
+    item:
+      name: TextureEncodingTest.glb
+      path: TextureEncodingTest/glTF-Binary/TextureEncodingTest.glb
+  - active: 1
+    item:
+      name: TextureLinearInterpolationTest.glb
+      path: TextureLinearInterpolationTest/glTF-Binary/TextureLinearInterpolationTest.glb
+  - active: 1
+    item:
+      name: TextureSettingsTest.glb
+      path: TextureSettingsTest/glTF-Binary/TextureSettingsTest.glb
+  - active: 1
+    item:
+      name: TextureTransformMultiTest.glb
+      path: TextureTransformMultiTest/glTF-Binary/TextureTransformMultiTest.glb
+  - active: 1
+    item:
+      name: ToyCar.glb
+      path: ToyCar/glTF-Binary/ToyCar.glb
+  - active: 1
+    item:
+      name: TransmissionRoughnessTest.glb
+      path: TransmissionRoughnessTest/glTF-Binary/TransmissionRoughnessTest.glb
+  - active: 1
+    item:
+      name: TransmissionTest.glb
+      path: TransmissionTest/glTF-Binary/TransmissionTest.glb
+  - active: 1
+    item:
+      name: TransmissionThinwallTestGrid.glb
+      path: TransmissionThinwallTestGrid/glTF-Binary/TransmissionThinwallTestGrid.glb
+  - active: 1
+    item:
+      name: "Unicode\u2764\u267BTest.glb"
+      path: "Unicode\u2764\u267BTest/glTF-Binary/Unicode\u2764\u267BTest.glb"
+  - active: 1
+    item:
+      name: UnlitTest.glb
+      path: UnlitTest/glTF-Binary/UnlitTest.glb
+  - active: 1
+    item:
+      name: VertexColorTest.glb
+      path: VertexColorTest/glTF-Binary/VertexColorTest.glb
+  - active: 1
+    item:
+      name: VirtualCity.glb
+      path: VirtualCity/glTF-Binary/VirtualCity.glb
+  - active: 1
+    item:
+      name: WaterBottle.glb
+      path: WaterBottle/glTF-Binary/WaterBottle.glb
+  - active: 1
+    item:
+      name: XmpMetadataRoundedCube.glb
+      path: XmpMetadataRoundedCube/glTF-Binary/XmpMetadataRoundedCube.glb
